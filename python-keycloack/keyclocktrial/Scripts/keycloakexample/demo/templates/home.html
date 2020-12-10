@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container-fluid ">
+	<div class="">
+		<h1 class="">Applications</h1>
+	</div>
+	<div class="row" style="float: none; margin: 0 auto;">
+		<div class="col-md-12">
+			<div class="row ">
+				{% for post in post.all %}
+				<div class="card mt-1 ml-1" style="width: 15rem;">
+					<img class="card-img-top " src="{{ post.image.url }}" alt="Card image cap">
+					<div class="card-body">
+						<h5 class="card-title">{{ post.name }}</h5>
+						<p class="card-text">Demo App , Some description.</p>
+						<a href="{{ post.url }}" class="btn btn-primary">SSO Login</a>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock content %}
